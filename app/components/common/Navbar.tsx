@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-zinc-200 bg-white px-2 py-3 dark:border-zinc-800 dark:bg-black">
-      <div className="mx-auto flex max-w-6xl items-center justify-between font-medium text-zinc-900 dark:text-zinc-100">
+    <nav className="w-full border-b border-zinc-200 bg-white px-2 py-3 ">
+      <div className="mx-auto flex max-w-6xl items-center justify-between font-medium text-zinc-900 ">
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         {/* Sign In Button */}
-        <button className="rounded-full border border-zinc-900 px-4 py-1.5 text-sm hover:bg-zinc-900 hover:text-white dark:border-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-black">
+        <button className="rounded-full border border-zinc-900 px-4 py-1.5 text-sm hover:bg-zinc-900 hover:text-white">
           Sign In
         </button>
 
