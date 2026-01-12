@@ -12,7 +12,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}): JSX.Element {
+}) {
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
