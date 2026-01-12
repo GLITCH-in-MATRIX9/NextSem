@@ -93,3 +93,25 @@ body {
     animation: jumpIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   }
 }
+@layer utilities {
+  /* Perspective and 3D utilities */
+  .perspective-1000 { perspective: 1000px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+  .rotate-y-180 { transform: rotateY(180deg); }
+  
+  /* GPU acceleration for mobile smoothness */
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Character floating animation */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+}
