@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-6 px-6 text-center">
       <Image
