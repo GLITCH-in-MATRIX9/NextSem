@@ -30,9 +30,11 @@ export default function Navbar() {
         </div>
 
         {/* Sign In Button */}
-        <button className="rounded-full border border-zinc-900 px-4 py-1.5 text-sm hover:bg-zinc-900 hover:text-white">
-          Sign In
-        </button>
+        <Link href="/Authentication/Login">
+          <button className="rounded-full border border-zinc-900 px-4 py-1.5 text-sm hover:bg-zinc-900 hover:text-white dark:border-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-black">
+            Sign In
+          </button>
+        </Link>
 
       </div>
     </nav>
