@@ -11,7 +11,7 @@ export default function JoinTeam() {
       ([entry]) => {
         if (entry.isIntersecting) setHasAppeared(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -111,7 +111,7 @@ export default function JoinTeam() {
               <div className="absolute backface-hidden">
                 <div
                   className="bg-black border-2 border-white/70 rounded-2xl p-4 text-left h-full transition-all duration-300 ease-out
-                    hover:-translate-y-1 :shadow-[0_10px_30px_rgba(255,255,255,0.08)] hover:border-white"
+                    hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.08)] hover:border-white"
                 >
                   <h4 className="text-lg font-semibold mb-4">
                     Basic Information
