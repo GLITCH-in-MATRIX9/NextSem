@@ -263,7 +263,7 @@ export default function BuddyMatching() {
           </Link>
 
           {/* Card 2: Project Partner */}
-          <Link href="/peer-help/buddy" className="block">
+            <Link href="/peer-help/project-partner" className="block" prefetch={true}>
             <div 
               ref={card2Ref}
               className="group bg-white rounded-[45px] p-5 shadow-2xl flex flex-col items-center border-2 border-purple-100 hover:border-purple-300 hover:shadow-[0_20px_60px_rgba(147,51,234,0.3)] hover:-translate-y-3 transition-all duration-500 relative overflow-hidden animate-bounce-in cursor-pointer h-[400px]"
