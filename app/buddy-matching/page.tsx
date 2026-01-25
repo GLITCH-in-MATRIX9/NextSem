@@ -1,212 +1,201 @@
+// "use client";
 
-// // import Image from "next/image";
-
-// // export default function BuddyMatching() {
-// //   return (
-// //     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans">
-// //       <main className="flex-grow container mx-auto max-w-6xl px-4 py-4">
-        
-// //         {/* Header Section - Contained Image */}
-// //         <div className="relative mb-6 mt-4 flex flex-col md:flex-row items-center justify-between gap-6 bg-black p-8 md:p-10 rounded-[40px] border border-zinc-800 shadow-2xl overflow-hidden">
-// //           <div className="max-w-lg z-10">
-// //             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
-// //               Buddy Matching
-// //             </h1>
-// //             <p className="text-zinc-400 text-lg leading-relaxed">
-// //               Connect with like-minded individuals to collaborate on projects or study together.
-// //             </p>
-// //             <p className="text-zinc-400 text-lg font-medium italic mt-1">
-// //               Choose your preferred matching type below.
-// //             </p>
-// //           </div>
-
-// //           <div className="relative h-56 w-full md:h-72 md:w-[400px] flex justify-center items-center">
-// //             <Image 
-// //               src="/girls-group.png" 
-// //               alt="Buddy Illustration" 
-// //               fill 
-// //               className="object-contain" 
-// //               priority
-// //             />
-// //           </div>
-// //         </div>
-
-// //         {/* Two Cards Section - Reduced Gaps & Increased Image Sizes */}
-// //         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-          
-// //           {/* Card 1: Study Buddy */}
-// //           <div className="bg-white rounded-[40px] p-6 shadow-lg flex flex-col items-center border border-zinc-100">
-// //             <h2 className="text-4xl font-black text-zinc-900 mb-2 text-center">Study Buddy</h2>
-            
-// //             <p className="text-zinc-700 text-center text-lg font-medium mb-4 px-2 leading-snug">
-// //               Find a study partner to collaborate on coursework, prepare for exams, and share knowledge together.
-// //             </p>
-            
-// //             <div className="space-y-2 mb-4 w-full max-w-sm">
-// //               <div className="flex items-center gap-3">
-// //                 <span className="flex-shrink-0 h-6 w-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
-// //                 <p className="text-zinc-800 text-lg font-semibold">Match based on courses and subjects</p>
-// //               </div>
-// //               <div className="flex items-center gap-3">
-// //                 <span className="flex-shrink-0 h-6 w-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
-// //                 <p className="text-zinc-800 text-lg font-semibold">Share knowledge, notes and resources</p>
-// //               </div>
-// //             </div>
-
-// //             <div className="mt-auto flex w-full items-center justify-between border-t border-zinc-50">
-// //               {/* Increased Image Size */}
-// //               <div className="relative h-64 w-64 md:h-80 md:w-80">
-// //                 <Image src="/card11.png" alt="Study Buddy" fill className="object-contain" />
-// //               </div>
-// //               <button className="h-40 w-40 rounded-full bg-zinc-200 text-zinc-900 font-black text-center flex items-center justify-center p-4 text-xl leading-tight hover:bg-zinc-900 hover:text-white transition-all duration-300">
-// //                 Find Your <br/> Study Buddy
-// //               </button>
-// //             </div>
-// //           </div>
-
-// //           {/* Card 2: Project Partner */}
-// //           <div className="bg-white rounded-[40px] p-6 shadow-lg flex flex-col items-center border border-zinc-100">
-// //             <h2 className="text-4xl font-black text-zinc-900 mb-2 text-center">Project Partner</h2>
-            
-// //             <p className="text-zinc-700 text-center text-lg font-medium mb-4 px-2 leading-snug">
-// //               Connect with developers and creators to build amazing projects and bring your ideas to life.
-// //             </p>
-
-// //             <div className="space-y-2 mb-4 w-full max-w-sm">
-// //               <div className="flex items-center gap-3">
-// //                 <span className="flex-shrink-0 h-6 w-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
-// //                 <p className="text-zinc-800 text-lg font-semibold">Collaborate on exciting projects</p>
-// //               </div>
-// //               <div className="flex items-center gap-3">
-// //                 <span className="flex-shrink-0 h-6 w-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
-// //                 <p className="text-zinc-800 text-lg font-semibold">Match based on tech stack and skills</p>
-// //               </div>
-// //             </div>
-
-// //             <div className="mt-auto flex w-full items-center justify-between border-t border-zinc-50">
-// //               {/* Increased Image Size */}
-// //               <div className="relative h-64 w-64 md:h-80 md:w-80">
-// //                 <Image src="/card22.png" alt="Project Partner" fill className="object-contain" />
-// //               </div>
-// //               <button className="h-40 w-40 rounded-full bg-zinc-200 text-zinc-900 font-black text-center flex items-center justify-center p-4 text-xl leading-tight hover:bg-zinc-900 hover:text-white transition-all duration-300">
-// //                 Find Your <br/> Project Partner
-// //               </button>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </main>
-// //     </div>
-// //   );
-// // }
+// import { useState, useEffect } from "react";
 // import Image from "next/image";
 
 // export default function BuddyMatching() {
+//   const textLines = [
+//     "Do you feel you lack the right connections for projects or studies?",
+//     "Struggling to find teammates who are equally motivated as you?",
+//     "Tired of doing projects alone while others work in groups?",
+//     "Don’t know whom to approach for hackathons or semester projects?",
+//     "Wish you had a study buddy who actually studies with you?",
+//     "Confused about how others build amazing projects together?",
+//     "Looking for people with the same skills and interests as yours?",
+//     "Feel stuck because you don’t have the right peer group?",
+//     "Want a partner who matches your learning speed and goals?",
+//     "Stop guessing. Start matching with the right people."
+//   ];
+
+//   const [index, setIndex] = useState(0);
+//   const [animationClass, setAnimationClass] = useState("animate-slide-in-right");
+
+//   useEffect(() => {
+//     const exitTimer = setTimeout(() => {
+//       setAnimationClass("animate-slide-out-left");
+//     }, 3500);
+
+//     const switchTimer = setTimeout(() => {
+//       setIndex((prev) => (prev + 1) % textLines.length);
+//       setAnimationClass("animate-slide-in-right");
+//     }, 4000);
+
+//     return () => {
+//       clearTimeout(exitTimer);
+//       clearTimeout(switchTimer);
+//     };
+//   }, [index]);
+
 //   return (
-//     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans">
-//       <main className="flex-grow container mx-auto max-w-6xl px-4 py-2">
+//     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans relative overflow-hidden">
+      
+//       <style jsx global>{`
+//         @keyframes slideInRight {
+//           from { transform: translateX(50px); opacity: 0; }
+//           to { transform: translateX(0); opacity: 1; }
+//         }
+//         @keyframes slideOutLeft {
+//           from { transform: translateX(0); opacity: 1; }
+//           to { transform: translateX(-50px); opacity: 0; }
+//         }
+//         @keyframes float {
+//           0%, 100% { transform: translateY(0px); }
+//           50% { transform: translateY(-10px); }
+//         }
+//         .animate-slide-in-right { animation: slideInRight 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+//         .animate-slide-out-left { animation: slideOutLeft 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+//         .animate-float { animation: float 4s ease-in-out infinite; }
+//       `}</style>
+
+//       {/* Background Decor Blobs */}
+//       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"></div>
+//       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-100/50 rounded-full blur-3xl -z-10 translate-x-1/3 translate-y-1/3"></div>
+
+//       <main className="flex-grow container mx-auto max-w-6xl px-4 py-6">
         
 //         {/* Header Section */}
-//         <div className="relative mb-4 mt-2 flex flex-col md:flex-row items-center justify-between gap-6 bg-black p-8 md:p-10 rounded-[40px] border border-zinc-800 shadow-2xl overflow-hidden">
-//           <div className="max-w-lg z-10">
-//             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
-//               Buddy Matching
+//         <div className="relative mb-6 mt-2 flex flex-col md:flex-row items-center justify-between gap-6 bg-black p-8 md:p-12 rounded-[48px] border border-zinc-800 shadow-2xl overflow-hidden group hover:shadow-blue-900/20 transition-all duration-500">
+//           <div className="max-w-lg z-10 relative">
+//             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-3 tracking-tight">
+//               Buddy Matching <span className="text-blue-500">.</span>
 //             </h1>
-//             <p className="text-zinc-400 text-lg leading-relaxed">
+//             <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
 //               Connect with like-minded individuals to collaborate on projects or study together.
 //             </p>
 //           </div>
 
-//           <div className="relative h-48 w-full md:h-64 md:w-[380px] flex justify-center items-center">
+//           <div className="relative h-56 w-full md:h-72 md:w-[420px] flex justify-center items-center animate-float">
 //             <Image 
 //               src="/girls-group.png" 
 //               alt="Buddy Illustration" 
 //               fill 
-//               className="object-contain" 
+//               className="object-contain drop-shadow-xl" 
 //               priority
 //             />
 //           </div>
 //         </div>
 
-//         {/* Integrated TIP Section - Placed between Header and Cards */}
-//         <div className="mb-4 mx-auto max-w-2xl bg-white border border-zinc-100 rounded-2xl p-3 flex items-center gap-3 shadow-sm">
-//           <div className="relative h-8 w-8 flex-shrink-0">
-//             <Image src="/bulb.png" alt="Tip" fill className="object-contain" />
-//           </div>
-//           <p className="text-xs text-zinc-600">
-//             <span className="font-bold">TIP:</span> Update your <span className="text-blue-500 underline cursor-pointer">profile</span> first to show your skills to potential matches!
+//         {/* Animated Text Section */}
+//         <div className="h-20 flex items-center justify-center mb-6 px-4 overflow-hidden relative">
+//           <p 
+//             key={index}
+//             className={`text-2xl md:text-3xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 leading-tight max-w-4xl ${animationClass}`}
+//           >
+//             {textLines[index]}
 //           </p>
 //         </div>
 
-//         {/* Cards Section - Shorter Height & Larger Images */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+//         {/* IMPROVED TIP SECTION */}
+//         <div className="mb-10 mx-auto max-w-3xl relative group z-10">
+//           {/* Animated Glow Background */}
+//           <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full opacity-30 group-hover:opacity-60 blur-md transition duration-500"></div>
+          
+//           {/* Main Tip Box Content */}
+//           <div className="relative bg-white/90 backdrop-blur-xl border border-white/60 rounded-full p-3 pl-4 pr-8 flex items-center gap-5 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-[1.01]">
+            
+//             {/* Icon Container with Circle Background */}
+//             <div className="h-12 w-12 flex-shrink-0 bg-yellow-100 rounded-full flex items-center justify-center border border-yellow-200 shadow-inner group-hover:rotate-12 transition-transform duration-300">
+//               <div className="relative h-7 w-7 animate-pulse">
+//                 <Image src="/bulb.png" alt="Tip" fill className="object-contain" />
+//               </div>
+//             </div>
+            
+//             {/* Tip Text */}
+//             <p className="text-base text-zinc-600 font-medium flex-grow leading-snug">
+//               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 tracking-wide">PRO TIP:</span> 
+//               {" "}Update your <span className="text-zinc-900 font-extrabold underline decoration-blue-400 underline-offset-4 cursor-pointer hover:text-blue-600 hover:decoration-blue-600 transition-all">profile</span> to unlock smart matching!
+//             </p>
+            
+//             {/* Decorative Arrow */}
+//             <div className="hidden sm:block text-zinc-300 group-hover:text-blue-500 transition-colors duration-300 transform group-hover:translate-x-1">
+//               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+//                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+//               </svg>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Cards Section */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           
 //           {/* Card 1: Study Buddy */}
-//           <div className="bg-white rounded-[32px] p-5 shadow-lg flex flex-col items-center border border-zinc-50">
-//             <h2 className="text-3xl font-black text-zinc-900 mb-1 text-center">Study Buddy</h2>
+//           <div className="group bg-white rounded-[40px] p-5 shadow-xl flex flex-col items-center border border-zinc-100 hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 transition-all duration-300">
+//             <h2 className="text-4xl font-black text-zinc-900 mb-1 text-center group-hover:text-blue-600 transition-colors">Study Buddy</h2>
             
-//             <p className="text-zinc-600 text-center text-base font-medium mb-3 px-2">
+//             <p className="text-zinc-600 text-center text-lg font-medium mb-3 px-2 leading-tight">
 //               Collaborate on coursework and prepare for exams together.
 //             </p>
             
-//             <div className="space-y-1 mb-3 w-full max-w-xs">
-//               <div className="flex items-center gap-2">
-//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-[10px]">✓</span>
-//                 <p className="text-zinc-800 text-sm font-semibold">Match based on courses</p>
+//             <div className="space-y-2 mb-2 w-full max-w-sm">
+//               <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
+//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
+//                 <p className="text-zinc-800 text-sm font-bold">Match based on courses</p>
 //               </div>
-//               <div className="flex items-center gap-2">
-//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-[10px]">✓</span>
-//                 <p className="text-zinc-800 text-sm font-semibold">Share knowledge and notes</p>
+//               <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
+//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
+//                 <p className="text-zinc-800 text-sm font-bold">Share knowledge and notes</p>
 //               </div>
 //             </div>
 
-//             <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-50">
-//               {/* Maximized Image Size */}
-//               <div className="relative h-72 w-72 lg:h-80 lg:w-80 transition-transform hover:scale-105 duration-300">
+//             <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-100">
+//               <div className="relative h-72 w-72 transition-transform duration-500 group-hover:scale-110">
 //                 <Image src="/card11.png" alt="Study Buddy" fill className="object-contain" />
 //               </div>
-//               <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-md hover:bg-zinc-800 transition-colors">
+//               <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-lg group-hover:bg-blue-600 group-hover:scale-105 transition-all duration-300">
 //                 Find Your <br/> Buddy
 //               </button>
 //             </div>
 //           </div>
 
 //           {/* Card 2: Project Partner */}
-//           <div className="bg-white rounded-[32px] p-5 shadow-lg flex flex-col items-center border border-zinc-50">
-//             <h2 className="text-3xl font-black text-zinc-900 mb-1 text-center">Project Partner</h2>
+//           <div className="group bg-white rounded-[40px] p-5 shadow-xl flex flex-col items-center border border-zinc-100 hover:shadow-2xl hover:shadow-purple-100 hover:-translate-y-2 transition-all duration-300">
+//             <h2 className="text-4xl font-black text-zinc-900 mb-1 text-center group-hover:text-purple-600 transition-colors">Project Partner</h2>
             
-//             <p className="text-zinc-600 text-center text-base font-medium mb-3 px-2">
+//             <p className="text-zinc-600 text-center text-lg font-medium mb-3 px-2 leading-tight">
 //               Build amazing projects and bring your ideas to life.
 //             </p>
 
-//             <div className="space-y-1 mb-3 w-full max-w-xs">
-//               <div className="flex items-center gap-2">
-//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-[10px]">✓</span>
-//                 <p className="text-zinc-800 text-sm font-semibold">Collaborate on projects</p>
+//             <div className="space-y-2 mb-2 w-full max-w-sm">
+//               <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
+//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
+//                 <p className="text-zinc-800 text-sm font-bold">Collaborate on projects</p>
 //               </div>
-//               <div className="flex items-center gap-2">
-//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-[10px]">✓</span>
-//                 <p className="text-zinc-800 text-sm font-semibold">Match by tech stack</p>
+//               <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
+//                 <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
+//                 <p className="text-zinc-800 text-sm font-bold">Match by tech stack</p>
 //               </div>
 //             </div>
 
-//             <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-50">
-//               {/* Maximized Image Size */}
-//               <div className="relative h-72 w-72 lg:h-80 lg:w-80 transition-transform hover:scale-105 duration-300">
+//             <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-100">
+//               <div className="relative h-72 w-72 transition-transform duration-500 group-hover:scale-110">
 //                 <Image src="/card22.png" alt="Project Partner" fill className="object-contain" />
 //               </div>
-//               <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-md hover:bg-zinc-800 transition-colors">
+//               <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-lg group-hover:bg-purple-600 group-hover:scale-105 transition-all duration-300">
 //                 Find Your <br/> Partner
 //               </button>
 //             </div>
 //           </div>
+
 //         </div>
 //       </main>
 //     </div>
 //   );
 // }
+
+
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function BuddyMatching() {
@@ -214,17 +203,21 @@ export default function BuddyMatching() {
     "Do you feel you lack the right connections for projects or studies?",
     "Struggling to find teammates who are equally motivated as you?",
     "Tired of doing projects alone while others work in groups?",
-    "Don’t know whom to approach for hackathons or semester projects?",
+    "Don't know whom to approach for hackathons or semester projects?",
     "Wish you had a study buddy who actually studies with you?",
     "Confused about how others build amazing projects together?",
     "Looking for people with the same skills and interests as yours?",
-    "Feel stuck because you don’t have the right peer group?",
+    "Feel stuck because you don't have the right peer group?",
     "Want a partner who matches your learning speed and goals?",
     "Stop guessing. Start matching with the right people."
   ];
 
   const [index, setIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState("animate-slide-in-right");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const headerRef = useRef<HTMLDivElement>(null);
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const exitTimer = setTimeout(() => {
@@ -242,8 +235,17 @@ export default function BuddyMatching() {
     };
   }, [index]);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 font-sans relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-zinc-50 via-gray-50 to-zinc-100 font-sans relative overflow-hidden">
       
       <style jsx global>{`
         @keyframes slideInRight {
@@ -255,144 +257,260 @@ export default function BuddyMatching() {
           to { transform: translateX(-50px); opacity: 0; }
         }
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 0 20px rgba(82, 82, 91, 0.3); }
+          50% { box-shadow: 0 0 40px rgba(82, 82, 91, 0.6); }
+        }
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes bounce-in {
+          0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+          50% { transform: scale(1.05) rotate(2deg); }
+          70% { transform: scale(0.9) rotate(-1deg); }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
         .animate-slide-in-right { animation: slideInRight 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-slide-out-left { animation: slideOutLeft 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        .animate-gradient { 
+          background-size: 200% 200%; 
+          animation: gradient-shift 8s ease infinite; 
+        }
+        .animate-bounce-in { animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+        .group:hover .shimmer-effect::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          animation: shimmer 2s infinite;
+        }
       `}</style>
 
-      {/* Background Decor Blobs */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-100/50 rounded-full blur-3xl -z-10 translate-x-1/3 translate-y-1/3"></div>
+      {/* Animated Background Orbs */}
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-gray-300/40 to-zinc-300/40 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2 animate-float"></div>
+      <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-zinc-300/40 to-gray-400/40 rounded-full blur-3xl -z-10 translate-x-1/3 translate-y-1/3 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-br from-gray-200/30 to-zinc-300/30 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2 animate-float" style={{ animationDelay: '4s' }}></div>
 
-      <main className="flex-grow container mx-auto max-w-6xl px-4 py-6">
+      {/* Floating Particles */}
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-2 h-2 bg-gradient-to-r from-gray-400 to-zinc-500 rounded-full opacity-20 animate-float"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${3 + Math.random() * 4}s`,
+          }}
+        />
+      ))}
+
+      <main className="flex-grow container mx-auto max-w-7xl px-4 py-6 relative z-10">
         
-        {/* Header Section */}
-        <div className="relative mb-6 mt-2 flex flex-col md:flex-row items-center justify-between gap-6 bg-black p-8 md:p-12 rounded-[48px] border border-zinc-800 shadow-2xl overflow-hidden group hover:shadow-blue-900/20 transition-all duration-500">
+        {/* Header Section with Parallax Effect */}
+        <div 
+          ref={headerRef}
+          className="relative mb-8 mt-4 flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-zinc-900 via-gray-900 to-zinc-800 p-6 md:p-8 rounded-[60px] border-2 border-white/10 shadow-2xl overflow-hidden group animate-bounce-in animate-gradient"
+          style={{
+            transform: `perspective(1000px) rotateX(${(mousePosition.y - 400) * 0.01}deg) rotateY(${(mousePosition.x - 600) * 0.01}deg)`,
+          }}
+        >
+          {/* Animated border effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-zinc-700 to-gray-800 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-[60px]"></div>
+          
+          {/* Shimmer overlay */}
+          <div className="absolute inset-0 shimmer-effect rounded-[60px] overflow-hidden"></div>
+
           <div className="max-w-lg z-10 relative">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-3 tracking-tight">
-              Buddy Matching <span className="text-blue-500">.</span>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-3 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-zinc-300 animate-gradient drop-shadow-lg">
+              Buddy Matching<span className="text-gray-400 animate-pulse">.</span>
             </h1>
-            <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+            <p className="text-zinc-200 text-lg md:text-xl leading-relaxed font-light">
               Connect with like-minded individuals to collaborate on projects or study together.
             </p>
           </div>
 
-          <div className="relative h-56 w-full md:h-72 md:w-[420px] flex justify-center items-center animate-float">
+          <div className="relative h-48 w-full md:h-60 md:w-[400px] flex justify-center items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-zinc-600/20 rounded-full blur-2xl animate-pulse-glow"></div>
             <Image 
               src="/girls-group.png" 
               alt="Buddy Illustration" 
               fill 
-              className="object-contain drop-shadow-xl" 
+              className="object-contain drop-shadow-2xl animate-float relative z-10" 
               priority
             />
           </div>
         </div>
 
-        {/* Animated Text Section */}
-        <div className="h-20 flex items-center justify-center mb-6 px-4 overflow-hidden relative">
+        {/* Animated Text Section with Typing Effect */}
+        <div className="h-24 flex items-center justify-center mb-8 px-4 overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
           <p 
             key={index}
-            className={`text-2xl md:text-3xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 leading-tight max-w-4xl ${animationClass}`}
+            className={`text-2xl md:text-4xl font-black text-center leading-tight max-w-5xl relative z-10 ${animationClass}`}
+            style={{
+              background: 'linear-gradient(90deg, #18181b, #3f3f46, #71717a, #18181b)',
+              backgroundSize: '200% auto',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: 'gradient-shift 3s linear infinite',
+            }}
           >
             {textLines[index]}
           </p>
         </div>
 
-        {/* IMPROVED TIP SECTION */}
-        <div className="mb-10 mx-auto max-w-3xl relative group z-10">
-          {/* Animated Glow Background */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full opacity-30 group-hover:opacity-60 blur-md transition duration-500"></div>
+        {/* Enhanced TIP SECTION */}
+        <div className="mb-12 mx-auto max-w-4xl relative group animate-bounce-in" style={{ animationDelay: '0.2s' }}>
+          {/* Multi-layer glow effect */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500 animate-pulse-glow"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full opacity-30 group-hover:opacity-60 blur-md transition-all duration-500"></div>
           
-          {/* Main Tip Box Content */}
-          <div className="relative bg-white/90 backdrop-blur-xl border border-white/60 rounded-full p-3 pl-4 pr-8 flex items-center gap-5 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-[1.01]">
+          <div className="relative bg-white/95 backdrop-blur-xl border-2 border-white/80 rounded-full p-4 pl-6 pr-10 flex items-center gap-6 shadow-2xl hover:shadow-3xl transition-all duration-500 transform group-hover:scale-[1.02]">
             
-            {/* Icon Container with Circle Background */}
-            <div className="h-12 w-12 flex-shrink-0 bg-yellow-100 rounded-full flex items-center justify-center border border-yellow-200 shadow-inner group-hover:rotate-12 transition-transform duration-300">
-              <div className="relative h-7 w-7 animate-pulse">
-                <Image src="/bulb.png" alt="Tip" fill className="object-contain" />
+            {/* Animated Icon Container */}
+            <div className="h-16 w-16 flex-shrink-0 bg-gradient-to-br from-yellow-200 via-yellow-300 to-orange-300 rounded-full flex items-center justify-center border-2 border-yellow-400/50 shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 animate-pulse-glow">
+              <div className="relative h-9 w-9">
+                <Image src="/bulb.png" alt="Tip" fill className="object-contain animate-float" />
               </div>
+              {/* Sparkle effects */}
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
             </div>
             
-            {/* Tip Text */}
-            <p className="text-base text-zinc-600 font-medium flex-grow leading-snug">
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 tracking-wide">PRO TIP:</span> 
-              {" "}Update your <span className="text-zinc-900 font-extrabold underline decoration-blue-400 underline-offset-4 cursor-pointer hover:text-blue-600 hover:decoration-blue-600 transition-all">profile</span> to unlock smart matching!
+            {/* Enhanced Text with Gradient */}
+            <p className="text-lg text-zinc-700 font-semibold flex-grow leading-snug">
+              <span className="font-black text-2xl mr-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">PRO TIP:</span> 
+              Update your <span className="font-black text-xl text-blue-600 underline decoration-blue-400 decoration-4 underline-offset-4 cursor-pointer hover:text-purple-600 hover:decoration-purple-400 transition-all duration-300 hover:scale-105 inline-block">profile</span> to unlock smart matching!
             </p>
             
-            {/* Decorative Arrow */}
-            <div className="hidden sm:block text-zinc-300 group-hover:text-blue-500 transition-colors duration-300 transform group-hover:translate-x-1">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+            {/* Animated Arrow */}
+            <div className="hidden sm:block text-zinc-400 group-hover:text-purple-500 transition-all duration-300 transform group-hover:translate-x-2 group-hover:scale-125">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-7 h-7">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
             </div>
           </div>
         </div>
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        {/* Enhanced Cards Section with Stagger Animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           
           {/* Card 1: Study Buddy */}
-          <div className="group bg-white rounded-[40px] p-5 shadow-xl flex flex-col items-center border border-zinc-100 hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 transition-all duration-300">
-            <h2 className="text-4xl font-black text-zinc-900 mb-1 text-center group-hover:text-blue-600 transition-colors">Study Buddy</h2>
+          <div 
+            ref={card1Ref}
+            className="group bg-white rounded-[50px] p-7 shadow-2xl flex flex-col items-center border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_20px_60px_rgba(59,130,246,0.3)] hover:-translate-y-3 transition-all duration-500 relative overflow-hidden animate-bounce-in"
+            style={{ animationDelay: '0.4s' }}
+          >
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-[50px]"></div>
             
-            <p className="text-zinc-600 text-center text-lg font-medium mb-3 px-2 leading-tight">
+            {/* Animated corner accents */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-purple-400/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <h2 className="text-5xl font-black text-zinc-900 mb-2 text-center group-hover:text-blue-600 transition-all duration-500 relative z-10 group-hover:scale-110">
+              Study Buddy
+            </h2>
+            
+            <p className="text-zinc-600 text-center text-xl font-medium mb-4 px-4 leading-tight relative z-10">
               Collaborate on coursework and prepare for exams together.
             </p>
             
-            <div className="space-y-2 mb-2 w-full max-w-sm">
-              <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
-                <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
-                <p className="text-zinc-800 text-sm font-bold">Match based on courses</p>
+            <div className="space-y-3 mb-4 w-full max-w-md relative z-10">
+              <div className="flex items-center gap-4 bg-gradient-to-r from-green-50 to-blue-50 p-3 rounded-2xl border border-green-200 group-hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <span className="h-7 w-7 bg-gradient-to-br from-green-400 to-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">✓</span>
+                <p className="text-zinc-800 text-base font-bold">Match based on courses</p>
               </div>
-              <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
-                <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
-                <p className="text-zinc-800 text-sm font-bold">Share knowledge and notes</p>
+              <div className="flex items-center gap-4 bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-2xl border border-blue-200 group-hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <span className="h-7 w-7 bg-gradient-to-br from-blue-400 to-cyan-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">✓</span>
+                <p className="text-zinc-800 text-base font-bold">Share knowledge and notes</p>
               </div>
             </div>
 
-            <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-100">
-              <div className="relative h-72 w-72 transition-transform duration-500 group-hover:scale-110">
-                <Image src="/card11.png" alt="Study Buddy" fill className="object-contain" />
+            <div className="mt-auto flex w-full items-center justify-around gap-4 pt-4 border-t-2 border-zinc-100 relative z-10">
+              <div className="relative h-80 w-80 transition-all duration-700 group-hover:scale-110 group-hover:rotate-2">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                <Image src="/card11.png" alt="Study Buddy" fill className="object-contain relative z-10" />
               </div>
-              <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-lg group-hover:bg-blue-600 group-hover:scale-105 transition-all duration-300">
-                Find Your <br/> Buddy
+              <button className="h-36 w-36 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-center flex items-center justify-center p-4 text-lg leading-tight shadow-2xl group-hover:shadow-[0_20px_40px_rgba(59,130,246,0.6)] group-hover:scale-110 transition-all duration-500 hover:from-purple-600 hover:to-pink-600 relative overflow-hidden">
+                <span className="relative z-10">Find Your<br/>Buddy</span>
+                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </button>
             </div>
           </div>
 
           {/* Card 2: Project Partner */}
-          <div className="group bg-white rounded-[40px] p-5 shadow-xl flex flex-col items-center border border-zinc-100 hover:shadow-2xl hover:shadow-purple-100 hover:-translate-y-2 transition-all duration-300">
-            <h2 className="text-4xl font-black text-zinc-900 mb-1 text-center group-hover:text-purple-600 transition-colors">Project Partner</h2>
+          <div 
+            ref={card2Ref}
+            className="group bg-white rounded-[50px] p-7 shadow-2xl flex flex-col items-center border-2 border-purple-100 hover:border-purple-300 hover:shadow-[0_20px_60px_rgba(147,51,234,0.3)] hover:-translate-y-3 transition-all duration-500 relative overflow-hidden animate-bounce-in"
+            style={{ animationDelay: '0.6s' }}
+          >
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-pink-500/0 to-red-500/0 group-hover:from-purple-500/5 group-hover:via-pink-500/5 group-hover:to-red-500/5 transition-all duration-500 rounded-[50px]"></div>
             
-            <p className="text-zinc-600 text-center text-lg font-medium mb-3 px-2 leading-tight">
+            {/* Animated corner accents */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-pink-400/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <h2 className="text-5xl font-black text-zinc-900 mb-2 text-center group-hover:text-purple-600 transition-all duration-500 relative z-10 group-hover:scale-110">
+              Project Partner
+            </h2>
+            
+            <p className="text-zinc-600 text-center text-xl font-medium mb-4 px-4 leading-tight relative z-10">
               Build amazing projects and bring your ideas to life.
             </p>
 
-            <div className="space-y-2 mb-2 w-full max-w-sm">
-              <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
-                <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
-                <p className="text-zinc-800 text-sm font-bold">Collaborate on projects</p>
+            <div className="space-y-3 mb-4 w-full max-w-md relative z-10">
+              <div className="flex items-center gap-4 bg-gradient-to-r from-purple-50 to-pink-50 p-3 rounded-2xl border border-purple-200 group-hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <span className="h-7 w-7 bg-gradient-to-br from-purple-400 to-pink-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">✓</span>
+                <p className="text-zinc-800 text-base font-bold">Collaborate on projects</p>
               </div>
-              <div className="flex items-center gap-3 bg-zinc-50 p-2 rounded-xl">
-                <span className="h-5 w-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
-                <p className="text-zinc-800 text-sm font-bold">Match by tech stack</p>
+              <div className="flex items-center gap-4 bg-gradient-to-r from-pink-50 to-red-50 p-3 rounded-2xl border border-pink-200 group-hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <span className="h-7 w-7 bg-gradient-to-br from-pink-400 to-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">✓</span>
+                <p className="text-zinc-800 text-base font-bold">Match by tech stack</p>
               </div>
             </div>
 
-            <div className="mt-auto flex w-full items-center justify-around gap-2 pt-2 border-t border-zinc-100">
-              <div className="relative h-72 w-72 transition-transform duration-500 group-hover:scale-110">
-                <Image src="/card22.png" alt="Project Partner" fill className="object-contain" />
+            <div className="mt-auto flex w-full items-center justify-around gap-4 pt-4 border-t-2 border-zinc-100 relative z-10">
+              <div className="relative h-80 w-80 transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                <Image src="/card22.png" alt="Project Partner" fill className="object-contain relative z-10" />
               </div>
-              <button className="h-32 w-32 rounded-full bg-zinc-900 text-white font-bold text-center flex items-center justify-center p-3 text-lg leading-tight shadow-lg group-hover:bg-purple-600 group-hover:scale-105 transition-all duration-300">
-                Find Your <br/> Partner
+              <button className="h-36 w-36 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white font-bold text-center flex items-center justify-center p-4 text-lg leading-tight shadow-2xl group-hover:shadow-[0_20px_40px_rgba(147,51,234,0.6)] group-hover:scale-110 transition-all duration-500 hover:from-pink-600 hover:to-red-600 relative overflow-hidden">
+                <span className="relative z-10">Find Your<br/>Partner</span>
+                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
               </button>
             </div>
           </div>
-
         </div>
+
+        {/* Success Stories Ticker */}
+        <div className="mt-16 overflow-hidden relative">
+          <div className="flex gap-8 animate-marquee whitespace-nowrap">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-zinc-200">
+                <span className="text-2xl">🎉</span>
+                <span className="text-zinc-700 font-semibold">500+ matches made this week!</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </main>
     </div>
   );
