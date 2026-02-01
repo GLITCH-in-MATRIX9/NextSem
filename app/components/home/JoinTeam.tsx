@@ -233,7 +233,7 @@ export default function JoinTeam() {
                   <div className="flex-1 overflow-y-auto space-y-4">
                     <input
                       type="text"
-                      placeholder="Full Name *"
+                      placeholder="Full Name"
                       value={formData.fullName}
                       onChange={(e) =>
                         setFormData({ ...formData, fullName: e.target.value })
@@ -243,7 +243,7 @@ export default function JoinTeam() {
 
                     <input
                       type="text"
-                      placeholder="College / University Name *"
+                      placeholder="College / University Name"
                       value={formData.college}
                       onChange={(e) =>
                         setFormData({ ...formData, college: e.target.value })
@@ -258,7 +258,7 @@ export default function JoinTeam() {
                       }
                       className="w-full rounded-lg bg-zinc-100 px-4 py-2.5 md:py-3 text-sm md:text-base text-black"
                     >
-                      <option value="">Year of Study *</option>
+                      <option value="">Year of Study</option>
                       <option value="1st">1st Year</option>
                       <option value="2nd">2nd Year</option>
                       <option value="3rd">3rd Year</option>
@@ -267,7 +267,7 @@ export default function JoinTeam() {
 
                     <input
                       type="email"
-                      placeholder="Email Address *"
+                      placeholder="Email Address"
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
@@ -653,7 +653,7 @@ export default function JoinTeam() {
                       />
                       <span className="text-zinc-300 text-xs md:text-sm">
                         I understand this is a learning-focused, student-led
-                        project. *
+                        project.*
                       </span>
                     </label>
 
