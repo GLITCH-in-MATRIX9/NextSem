@@ -152,6 +152,67 @@ export default function JoinTeam() {
             star-zoom
           `}
         />
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <span className="absolute bottom-[18%] right-[32%] text-blue-400 text-[14px] animate-[pulse_0.8s_infinite] [animation-delay:0.1s]">
+            ★
+          </span>
+          <span className="absolute bottom-[28%] right-[25%] text-orange-600 text-[11px] animate-[pulse_0.6s_infinite] [animation-delay:0.3s]">
+            ★
+          </span>
+          <span className="absolute bottom-[12%] right-[22%] text-white text-[8px] opacity-60 animate-[pulse_1s_infinite]">
+            ●
+          </span>
+          <span className="absolute bottom-[35%] right-[28%] text-blue-500 text-[15px] animate-[pulse_0.7s_infinite] [animation-delay:0.5s]">
+            ★
+          </span>
+          <span className="absolute bottom-[22%] right-[38%] text-blue-300 text-[12px] animate-[pulse_0.9s_infinite] [animation-delay:0.2s]">
+            ✦
+          </span>
+          <span className="absolute bottom-[40%] right-[15%] text-white text-[10px] animate-[pulse_1.1s_infinite]">
+            ★
+          </span>
+          <span className="absolute bottom-[10%] right-[40%] text-orange-400 text-[9px] animate-[pulse_0.5s_infinite]">
+            ✦
+          </span>
+
+          <span className="absolute bottom-[15%] left-[40%] text-blue-500 text-xl animate-[pulse_0.5s_infinite]">
+            ★
+          </span>
+          <span className="absolute bottom-[22%] left-[44%] text-white text-[11px] opacity-40 animate-[pulse_1.2s_infinite] [animation-delay:0.4s]">
+            ●
+          </span>
+          <span className="absolute bottom-[36%] left-[26%] text-orange-500 text-[14px] animate-[pulse_0.7s_infinite] [animation-delay:0.1s]">
+            ★
+          </span>
+          <span className="absolute bottom-[18%] right-[40%] text-blue-400 text-lg animate-[pulse_0.8s_infinite] [animation-delay:0.6s]">
+            ★
+          </span>
+          <span className="absolute bottom-[8%] right-[46%] text-orange-500 text-[14px] animate-[pulse_0.7s_infinite] [animation-delay:0.1s]">
+            ★
+          </span>
+          <span className="absolute bottom-[25%] left-[48%] text-blue-300 text-[10px] animate-[pulse_1s_infinite]">
+            ✦
+          </span>
+          <span className="absolute bottom-[5%] left-[38%] text-white text-[8px] animate-[pulse_0.6s_infinite] [animation-delay:0.2s]">
+            ★
+          </span>
+
+          <span className="absolute top-[5%] left-[12%] text-blue-500 text-1.5xl animate-[pulse_1s_infinite]">
+            ★
+          </span>
+          <span className="absolute top-[35%] left-[35%] text-blue-400 text-sm animate-[pulse_0.9s_infinite] [animation-delay:0.8s]">
+            ✦
+          </span>
+          <span className="absolute top-[10%] right-[25%] text-orange-500 text-lg animate-[pulse_1.1s_infinite] [animation-delay:0.3s]">
+            ★
+          </span>
+          <span className="absolute top-[25%] right-[10%] text-blue-600 text-md animate-[pulse_0.7s_infinite]">
+            ★
+          </span>
+          <span className="absolute top-[50%] left-[8%] text-white text-[19px] opacity-20 animate-[pulse_1.3s_infinite]">
+            ●
+          </span>
+        </div>
       </div>
 
       <div

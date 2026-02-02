@@ -172,14 +172,16 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Star zoom in / zoom out animation */
+/* Star zoom + brightness animation */
 @keyframes star-zoom {
   0%,
   100% {
     transform: scale(0.8) translateY(0);
+    /* bright when zoomed out */
   }
   50% {
     transform: scale(1.1) translateY(-6px);
+    /* dim when zoomed in */
   }
 }
 
@@ -188,13 +190,12 @@ body {
 }
 
 .star-zoom-slow {
-  animation: star-zoom 3s ease-in-out infinite;
+  animation: star-zoom 4.5s ease-in-out infinite;
 }
 
 .star-zoom-fast {
-  animation: star-zoom 3s ease-in-out infinite;
+  animation: star-zoom 2s ease-in-out infinite;
 }
-
 /* ===============================
    Custom scrollbar for JoinTeam
    =============================== */
