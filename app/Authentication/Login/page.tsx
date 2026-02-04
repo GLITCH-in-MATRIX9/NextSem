@@ -95,7 +95,6 @@ export default function LoginPage() {
     Forgot Password?
   </a>
 </div>
-
 </div>
 
 
