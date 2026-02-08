@@ -40,7 +40,7 @@ export default function Navbar() {
         key={item}
         className="flex items-center gap-2 cursor-pointer rounded-md px-2 py-1 transition hover:bg-zinc-100 hover:text-zinc-900"
       >
-        {Icon && <Icon size={16} className="text-zinc-500" />}
+        <Icon size={16} className="text-zinc-500" />
         <span>{item}</span>
       </li>
     );
@@ -52,7 +52,13 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/LOGO.png" alt="NextSem Logo" width={70} height={70} priority />
+          <Image
+            src="/LOGO.png"
+            alt="NextSem Logo"
+            width={70}
+            height={70}
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -60,40 +66,63 @@ export default function Navbar() {
           <Link href="/" className="hover:opacity-70">Home</Link>
 
           {/* Features Dropdown */}
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={() => setFeaturesOpen(true)}
+            onMouseLeave={() => setFeaturesOpen(false)}
+          >
             <button className="flex items-center gap-1 hover:opacity-70">
               Features <span className="text-sm">▾</span>
             </button>
 
-            <div className="absolute left-1/2 top-full z-50 mt-4 hidden w-[580px] -translate-x-1/2 rounded-xl border border-zinc-200 bg-white p-5 shadow-lg group-hover:block">
-              <div className="grid grid-cols-3 gap-6 text-sm">
-                
-                {/* TOOLS */}
-                <div>
-                  <p className="mb-3 font-semibold text-zinc-900">Tools</p>
-                  <ul className="space-y-2 text-zinc-600">
-                    {["Semester Planner","Design Mania","CGPA Calculator","Attendance Calculator","Resource Vault"].map(renderItem)}
-                  </ul>
-                </div>
+            {featuresOpen && (
+              <div
+                className="absolute left-1/2 z-50 w-[580px]
+                -translate-x-1/2 mt-4
+                rounded-xl border border-zinc-200 bg-white p-5 shadow-lg"
+              >
+                {/* invisible hover bridge */}
+                <div className="absolute -top-4 left-0 h-4 w-full" />
 
-                {/* GUIDANCE */}
-                <div>
-                  <p className="mb-3 font-semibold text-zinc-900">Guidance</p>
-                  <ul className="space-y-2 text-zinc-600">
-                    {["Senior Connect","College Process Explainer","Do’s & Don’ts"].map(renderItem)}
-                  </ul>
-                </div>
+                <div className="grid grid-cols-3 gap-6 text-sm">
+                  
+                  {/* Tools */}
+                  <div>
+                    <p className="mb-3 font-semibold text-zinc-900">Tools</p>
+                    <ul className="space-y-2 text-zinc-600">
+                      {[
+                        "Semester Planner",
+                        "Design Mania",
+                        "CGPA Calculator",
+                        "Attendance Calculator",
+                        "Resource Vault",
+                      ].map(renderItem)}
+                    </ul>
+                  </div>
 
-                {/* PEER HELP */}
-                <div>
-                  <p className="mb-3 font-semibold text-zinc-900">Peer Help</p>
-                  <ul className="space-y-2 text-zinc-600">
-                    {["Buddy Matcher","Response Forum"].map(renderItem)}
-                  </ul>
-                </div>
+                  {/* Guidance */}
+                  <div>
+                    <p className="mb-3 font-semibold text-zinc-900">Guidance</p>
+                    <ul className="space-y-2 text-zinc-600">
+                      {[
+                        "Senior Connect",
+                        "College Process Explainer",
+                        "Do’s & Don’ts",
+                      ].map(renderItem)}
+                    </ul>
+                  </div>
 
+                  {/* Peer Help */}
+                  <div>
+                    <p className="mb-3 font-semibold text-zinc-900">Peer Help</p>
+                    <ul className="space-y-2 text-zinc-600">
+                      {["Buddy Matcher", "Response Forum"].map(renderItem)}
+                    </ul>
+                  </div>
+
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <Link href="/contact" className="hover:opacity-70">Contact</Link>
@@ -112,7 +141,13 @@ export default function Navbar() {
           className="md:hidden flex items-center p-2 rounded hover:bg-zinc-100"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
             {menuOpen ? (
               <path d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -125,14 +160,13 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden mt-2 space-y-2 border-t border-zinc-200 pt-2">
-          <Link href="/" className="block px-2 py-2 rounded text-zinc-700 hover:bg-zinc-100">
+          <Link href="/" className="block px-2 py-2 rounded hover:bg-zinc-100">
             Home
           </Link>
 
-          {/* Mobile Features */}
           <div>
             <button
-              className="w-full flex justify-between items-center px-2 py-2 rounded text-zinc-700 hover:bg-zinc-100"
+              className="w-full flex justify-between items-center px-2 py-2 rounded hover:bg-zinc-100"
               onClick={() => setFeaturesOpen(!featuresOpen)}
             >
               Features {featuresOpen ? "▴" : "▾"}
@@ -140,12 +174,12 @@ export default function Navbar() {
 
             {featuresOpen && (
               <div className="mt-2 ml-2 space-y-1">
-                {Object.keys(featureIcons).map(item => {
+                {Object.keys(featureIcons).map((item) => {
                   const Icon = featureIcons[item];
                   return (
                     <div
                       key={item}
-                      className="flex items-center gap-2 px-2 py-1 rounded text-zinc-600 hover:bg-zinc-100 cursor-pointer"
+                      className="flex items-center gap-2 px-2 py-1 rounded hover:bg-zinc-100"
                     >
                       <Icon size={16} className="text-zinc-500" />
                       <span>{item}</span>
@@ -156,13 +190,13 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/contact" className="block px-2 py-2 rounded text-zinc-700 hover:bg-zinc-100">
+          <Link href="/contact" className="block px-2 py-2 rounded hover:bg-zinc-100">
             Contact
           </Link>
-          <Link href="/about" className="block px-2 py-2 rounded text-zinc-700 hover:bg-zinc-100">
+          <Link href="/about" className="block px-2 py-2 rounded hover:bg-zinc-100">
             About Us
           </Link>
-          <Link href="/Authentication/Login" className="block px-2 py-2 rounded text-zinc-700 hover:bg-zinc-100">
+          <Link href="/Authentication/Login" className="block px-2 py-2 rounded hover:bg-zinc-100">
             Sign In
           </Link>
         </div>
