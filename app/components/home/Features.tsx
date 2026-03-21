@@ -180,11 +180,11 @@ export default function Features() {
                         key={btnIndex}
                         href={btn.link}
                         className={`py-2 px-5 rounded-xl border-[2px] border-black text-[10px] font-black uppercase tracking-widest transition-all 
-                        hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-0 active:shadow-none ${
-                          item.dark
-                            ? "bg-white text-black hover:bg-zinc-200"
-                            : "bg-black text-white hover:bg-zinc-800"
-                        }`}
+                         hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-0 active:shadow-none ${
+                           item.dark
+                             ? "bg-white text-black hover:bg-zinc-200"
+                             : "bg-black text-white hover:bg-zinc-800"
+                         }`}
                         style={{ transitionDelay: `${btnIndex * 50}ms` }}
                       >
                         {btn.label}
