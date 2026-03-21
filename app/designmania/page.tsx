@@ -1,5 +1,11 @@
+<<<<<<< HEAD:app/design-mania/Main/page.tsx
+import React from 'react';
+import { Anuphan, Poppins } from 'next/font/google';
+import Link from 'next/link';
+=======
 import React from "react";
 import { Anuphan, Poppins } from "next/font/google";
+>>>>>>> upstream/main:app/designmania/page.tsx
 
 // 1. Load Fonts
 const anuphan = Anuphan({
@@ -100,6 +106,23 @@ export default function DesignMania() {
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-175 mx-auto place-items-center">
           {/* CARD 1: CHEAT SHEET */}
+<<<<<<< HEAD:app/design-mania/Main/page.tsx
+          <Link href="/design-mania/Cheat-sheet" className="block w-full max-w-[320px] h-70">
+            <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition hover:-translate-y-1 group hover:bg-gray-900 hover:text-white">
+              <div>
+                <h3 className="text-[1.5rem] font-bold mb-2">Cheat-sheet</h3>
+                <p className="text-[0.9rem] font-bold leading-snug max-w-45">
+                  Here is the cheat sheet for DSA, CS Fundamentals, etc.
+                </p>
+              </div>
+              <img 
+                src="/books.png" 
+                alt="Clipboard" 
+                className="self-end w-35 h-1000 object-contain -translate-y-8" 
+              />
+            </div>
+          </Link>
+=======
           <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition  group hover:bg-gray-900 hover:text-white">
             <div>
               <h3 className="text-[1.5rem] font-bold mb-2">Cheat-sheet</h3>
@@ -113,6 +136,7 @@ export default function DesignMania() {
               className="self-end w-35 h-1000 object-contain -translate-y-8"
             />
           </div>
+>>>>>>> upstream/main:app/designmania/page.tsx
           {/* CARD 2: TO-DO LISTS (Updated to Uplift Image) */}
           <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition  group hover:bg-gray-900 hover:text-white">
             <div>
@@ -129,6 +153,39 @@ export default function DesignMania() {
             />
           </div>
           {/* CARD 3: STICKERS */}
+<<<<<<< HEAD:app/design-mania/Main/page.tsx
+          <Link href="/design-mania/Stickers" className="block w-full max-w-[320px] h-70">
+            <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition hover:-translate-y-1 group hover:bg-gray-900 hover:text-white">
+              <div>
+                <h3 className="text-[1.5rem] font-bold mb-2">Stickers</h3>
+                <p className="text-[0.9rem] font-bold leading-snug max-w-45">
+                  Loved our stickers? Click here and download them.
+                </p>
+              </div>
+              <img 
+                src="/sticker.png" 
+                alt="Stickers" 
+                className="self-end w-40 h-1000 object-contain -translate-y-4" 
+              />
+            </div>
+          </Link>
+          {/* CARD 4: ROAD MAP */}
+          <Link href="/design-mania/Roadmap" className="block w-full max-w-[320px] h-70">
+            <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition hover:-translate-y-1 group hover:bg-gray-900 hover:text-white">
+              <div>
+                <h3 className="text-[1.5rem] font-bold mb-2">Road Map</h3>
+                <p className="text-[0.9rem] font-bold leading-snug max-w-45">
+                  Need help in your career? Find the road map for MI, SDE, etc.
+                </p>
+              </div>
+              <img 
+                src="/road.png" 
+                alt="Roadmap" 
+                className="self-end w-45 h-1000 object-contain -translate-y-8" 
+              />
+            </div>
+          </Link>
+=======
           <div className="w-full max-w-[320px] h-70 p-6 flex flex-col justify-between bg-white text-black border-2 border-black rounded-3xl shadow-[0_5px_25px_rgba(0,0,0,0.15)] transition  group hover:bg-gray-900 hover:text-white">
             <div>
               <h3 className="text-[1.5rem] font-bold mb-2">Stickers</h3>
@@ -156,6 +213,7 @@ export default function DesignMania() {
               className="self-end w-45 h-1000 object-contain -translate-y-8"
             />
           </div>
+>>>>>>> upstream/main:app/designmania/page.tsx
         </div>
       </main>
     </div>
