@@ -15,42 +15,42 @@ export default function RoadmapPage() {
       img: "/Ml.png", 
        
       imgPos: "scale(1.0) translate(0px, 0px)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "From raw data to intelligent insights—your step-by-step path to mastery starts here." 
     },
     { 
       title: "Web Development", 
       img: "/Web d.png", 
       color: "bg-[#E3F2FD]", 
       imgPos: "scale(1.1) translate(0px, 5px)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "Build the modern web—from stunning interfaces to scalable backends." 
     },
     { 
       title: "Data Science", 
       img: "/Data Science.png", 
      
       imgPos: "scale(1.0)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "Transform raw data into meaningful insights and intelligent decisions." 
     },
     { 
       title: "DevOps", 
       img: "/Devops.png", 
       color: "bg-[#2C4A63]", 
       imgPos: "scale(1.0)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "Bridge the gap between code and cloud with seamless automation and scale." 
     },
     { 
       title: "Cyber Security", 
       img: "/Cyber.png", 
       color: "bg-[#2C4A63]", 
       imgPos: "scale(1.0)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "Protect digital assets and master the art of defensive engineering" 
     },
     { 
       title: "App Development", 
       img: "/App d.png", 
       color: "bg-[#E8EAF6]", 
       imgPos: "scale(1.2)",
-      desc: "Never forget to complete to do your tasks. Make a list right away" 
+      desc: "Build seamless experiences for the world’s most personal devices." 
     },
   ];
 
