@@ -6,9 +6,9 @@ const Card = ({ imagePath, isMain = false, delay = "0s" }: { imagePath: string; 
   <div 
     style={{ animationDelay: delay }}
     className={`
-      relative bg-[#1A1A1A] rounded-[40px] overflow-hidden flex flex-col items-center justify-center
-      ${isMain ? 'w-[340px] h-[580px] z-10' : 'w-[280px] h-[480px]'}
-      transition-all duration-300 hover:scale-105 shadow-2xl
+      relative bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col items-center justify-center
+      ${isMain ? 'w-[260px] h-[440px] z-10' : 'w-[220px] h-[360px]'}
+      transition-all duration-300 hover:scale-105 shadow-xl
       animate-float
     `}
   >
@@ -19,10 +19,9 @@ const Card = ({ imagePath, isMain = false, delay = "0s" }: { imagePath: string; 
     />
   </div>
 );
-
 export default function StudyHero() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4">
+    <div className="min-h-[300px] bg-white flex items-center justify-center p-4">
       <style jsx>{`
         @keyframes float {
           0% { transform: translateY(0px); }
