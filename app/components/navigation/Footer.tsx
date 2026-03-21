@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -10,34 +11,28 @@ const Footer = () => {
       const isDark = document.documentElement.classList.contains("dark");
       setIsDarkMode(isDark);
     };
-
     checkDarkMode();
-
     const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
 
   const footerLinks = {
     tools: [
-      { name: "Semester Planner", href: "#" },
-      { name: "Design Mania", href: "#" },
-      { name: "CGPA Calculator", href: "#" },
-      { name: "Attendance Calculator", href: "#" },
-      { name: "Resource Vault", href: "#" },
+      { name: "Semester Planner",       href: "/tools/sem-planner" },
+      { name: "Design Mania",           href: "/tools/design" },
+      { name: "CGPA Calculator",        href: "/tools/gpa-calculator" },
+      { name: "Attendance Calculator",  href: "/tools/attendance-calculator" },
+      { name: "Resource Vault",         href: "/tools/resources" },
     ],
     guidance: [
-      { name: "Senior Connect", href: "#" },
-      { name: "College Process Explainer", href: "#" },
-      { name: "DOs and Don'ts", href: "#" },
+      { name: "Senior Connect",             href: "/guidance/senior-connect" },
+      { name: "College Process Explainer",  href: "/guidance/process" },
+      { name: "DOs and Don'ts",             href: "/guidance/dosanddonts" },
     ],
     peerHelp: [
-      { name: "Buddy Matcher", href: "#" },
-      { name: "Response Forum", href: "#" },
+      { name: "Buddy Matcher",   href: "/buddy-matching" },   // ← updated
+      { name: "Response Forum",  href: "/peer-help/response" },
     ],
   };
 
@@ -46,7 +41,6 @@ const Footer = () => {
 
       {/* SECTION 1 */}
       <div className="bg-black text-white px-8 pt-16 pb-32 relative min-h-[500px]">
-
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-row justify-between items-start w-full mb-16">
 
@@ -56,9 +50,9 @@ const Footer = () => {
               <ul className="space-y-2 text-base opacity-90">
                 {footerLinks.tools.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="hover:text-white/70 transition">
+                    <Link href={link.href} className="hover:text-white/70 transition">
                       • {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -71,9 +65,9 @@ const Footer = () => {
                 <ul className="space-y-2 text-base opacity-90">
                   {footerLinks.guidance.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="hover:text-white/70 transition">
+                      <Link href={link.href} className="hover:text-white/70 transition">
                         • {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -87,9 +81,9 @@ const Footer = () => {
                 <ul className="space-y-2 text-base opacity-90">
                   {footerLinks.peerHelp.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="hover:text-white/70 transition">
+                      <Link href={link.href} className="hover:text-white/70 transition">
                         • {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -116,46 +110,30 @@ const Footer = () => {
       </div>
 
       {/* SECTION 2 */}
-      <div
-        className={`py-16 flex flex-col items-center justify-center transition-colors ${
-          isDarkMode ? "bg-[#121212]" : "bg-white"
-        }`}
-      >
-        <h2
-          className={`text-3xl md:text-4xl font-bold mb-6 ${
-            isDarkMode ? "text-white" : "text-black"
-          }`}
-        >
+      <div className={`py-16 flex flex-col items-center justify-center transition-colors ${isDarkMode ? "bg-[#121212]" : "bg-white"}`}>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-black"}`}>
           Made For Students
         </h2>
-
         <div className="flex gap-6">
           {["linkedin", "fb", "x", "insta"].map((icon) => (
             <a key={icon} href="#">
-              <img
-                src={`/${icon}.png`}
-                alt={icon}
-                className="w-9 h-9 hover:scale-110 transition"
-              />
+              <img src={`/${icon}.png`} alt={icon} className="w-9 h-9 hover:scale-110 transition" />
             </a>
           ))}
         </div>
       </div>
 
-      {/* SECTION 3 (WHITE CLEAN COPYRIGHT) */}
+      {/* SECTION 3 */}
       <div className="w-full bg-white border-t border-black/10">
         <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between text-sm text-black/70">
-
           <p>
             © {new Date().getFullYear()} <span className="font-semibold text-black">NextSem</span>. All rights reserved.
           </p>
-
           <div className="flex gap-5 mt-2 md:mt-0">
             <a href="#" className="hover:text-black transition">Privacy</a>
             <a href="#" className="hover:text-black transition">Terms</a>
             <a href="#" className="hover:text-black transition">Contact</a>
           </div>
-
         </div>
       </div>
 
