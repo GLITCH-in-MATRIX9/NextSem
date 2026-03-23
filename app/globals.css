@@ -60,9 +60,15 @@ body {
    =============================== */
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-float {
@@ -93,8 +99,12 @@ body {
 
 /* Marquee */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -103,7 +113,8 @@ body {
 
 /* Star animation */
 @keyframes star-zoom {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(0.8) translateY(0);
   }
   50% {
@@ -156,7 +167,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 .perspective {
   perspective: 1000px;
 }
@@ -165,6 +175,19 @@ html {
   transform-style: preserve-3d;
 }
 
-.backface-hidden {
-  backface-visibility: hidden;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #52525b, #3f3f46);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3f3f46, #27272a);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
