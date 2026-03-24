@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react"
 
 export default function useGSAPAnimations() {
-  const headerGirlRef = useRef(null)
   const girl1Ref = useRef(null)
   const girl2Ref = useRef(null)
   const card1Ref = useRef(null)
@@ -12,11 +11,6 @@ export default function useGSAPAnimations() {
   useEffect(() => {
     const init = async () => {
       const { gsap } = await import("gsap")
-
-      gsap.fromTo(headerGirlRef.current,
-        { x: 120, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1 }
-      )
 
       gsap.fromTo(card1Ref.current,
         { y: 60, opacity: 0 },
@@ -33,7 +27,6 @@ export default function useGSAPAnimations() {
   }, [])
 
   return {
-    headerGirlRef,
     girl1Ref,
     girl2Ref,
     card1Ref,

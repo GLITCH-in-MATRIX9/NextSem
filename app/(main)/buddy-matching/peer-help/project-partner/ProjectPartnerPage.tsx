@@ -234,7 +234,7 @@ export default function ProjectPartnerPage() {
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4 border border-white/20">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 <span className="text-white text-sm font-semibold">
-                  850+ Active Projects
+                   Active Projects
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
