@@ -15,7 +15,7 @@ export default function BuddyMatching() {
 
       <main className="container mx-auto max-w-7xl px-4 py-6">
 
-        <Header refs={refs} />
+        <Header />
 
         <AnimatedText />
 
