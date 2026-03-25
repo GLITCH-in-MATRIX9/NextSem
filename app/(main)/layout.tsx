@@ -1,5 +1,5 @@
-import Navbar from "@/app/components/navigation/Navbar";
-import Footer from "@/app/components/navigation/Footer";
+import Navbar from "./components/navigation/Navbar";
+import Footer from "./components/navigation/Footer";
 
 export default function ResourcesLayout({
   children,

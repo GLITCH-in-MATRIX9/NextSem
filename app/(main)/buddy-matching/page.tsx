@@ -21,4 +21,4 @@ export default function BuddyMatching() {
       </main>
     </div>
   );
-}
+} 
