@@ -1,0 +1,233 @@
+body{
+    margin:0;
+    background: #171616;
+
+}
+
+.box{
+    margin:50px 50px;
+    border-radius: 75px;
+    background: rgba(0, 0, 0, 0.75);
+    background-color: #000;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.pageHeading{
+    color: #FEFEFE;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align:center;
+}
+
+.pageContent{
+    color: #EDEDEB;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+}
+
+/*forgotpass1*/
+.container1 {
+  display: flex;
+  height: 100%;
+  flex: 1; 
+}
+
+.left{
+  flex: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.right{
+    flex:7;
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    
+}
+
+.form label{
+    color: white;
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #d9d9d9;
+  font-size: 16px;
+}
+
+.page1buttons {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 20px;
+}
+
+.page1buttons button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*forgotpass2*/
+.otp-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.otp-container input {
+  width: 50px;
+  height: 60px;
+  text-align: center;
+  font-size: 24px;
+  border: none;
+  background: #d9d9d9;
+  outline: none;
+}
+
+.page_buttons{
+    display: flex;
+    justify-content: space-between;
+    width:800px;
+    margin: 30px auto;
+}
+
+.page_buttons button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*forgotpass3*/
+.reset {
+    width:800px;
+    margin:40px auto;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.row {
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+  align-items: center;
+  gap:20px;
+}
+
+.row label{
+    color: white;
+    font-family: Montserrat;
+    font-size: 20px;
+    text-align:left;
+    width:400px
+}
+
+.row input {
+    width: 220px;
+    padding: 10px;
+    border-radius: 10px;
+    border:none;
+    background: #d9d9d9
+}
+
+
+/*forgotpass4*/
+.container2{
+    display:flex;
+    flex:1;
+    align-items:stretch;
+}
+
+.left_side{
+    flex: 4.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top:40px;
+    padding-left: 30px;
+}
+
+.mid{
+    flex:3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.right_side{
+    flex:2.5;
+    display:flex;
+    justify-content: flex-end;   
+    align-items: flex-end;       
+    padding-right: 75px;
+    padding-bottom:150px;
+}
+.heading1{
+    margin:0;
+    color: #FEFEFE;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align:left;
+    line-height:1.1;
+}
+
+.heading2{
+    margin:0;
+    color:green;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self:flex-end;
+}
+
+.heading1 + .heading2 {
+    margin-top: 5px;
+}
+
+.login_btn {
+    padding: 12px 24px;
+    background-color: #16a34a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.login_btn:hover {
+    background-color: #15803d;
+}

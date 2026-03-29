@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forgot-password-2</title>
+    <link rel="stylesheet" href="forgotpassstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="box">
+        <h1 class="pageHeading">ENTER VERIFICATION CODE</h1>
+        <h2 class="pageContent" style="text-align: center">A verification code has been sent to the email id</h2>
+        <br/>
+        <div class="otp-container">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+        </div>
+        <br/>
+        <div class="page_buttons">
+            <button onclick="window.location.href='forgotpass1.html'">back</button>
+            <button onclick="window.location.href='forgotpass3.html'">next</button>
+        </div>
+</div>
+
+
+<script>
+  const inputs = document.querySelectorAll(".otp-container input");
+
+  inputs.forEach((input, index) => {
+    input.addEventListener("input", () => {
+      if (input.value.length === 1 && index < inputs.length - 1) {
+        inputs[index + 1].focus();  // move forward
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && index > 0 && !input.value) {
+        inputs[index - 1].focus();  // move backward
+      }
+    });
+  });
+</script>
+</body>
+</html>
