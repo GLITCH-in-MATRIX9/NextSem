@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String       @id @default(uuid())
+  name         String
+  email        String       @unique
+  password     String
+  year         String?
+  semester     String?
+  branch       String?
+  cgpa         Float?
+  credits      Int?
+  totalCredits Int?
+  subjects     String[]
+  onboarded    Boolean      @default(false)
+  createdAt    DateTime     @default(now())
+
+  connectionsFrom Connection[] @relation("ConnectionFrom")
+  connectionsTo   Connection[] @relation("ConnectionTo")
+  messagesSent    Message[]    @relation("MessageFrom")
+  messagesReceived Message[]   @relation("MessageTo")
+}
+
+model Connection {
+  id         String   @id @default(uuid())
+  fromUserId String
+  toUserId   String
+  status     String   @default("pending") // pending | accepted | rejected
+  createdAt  DateTime @default(now())
+
+  from User @relation("ConnectionFrom", fields: [fromUserId], references: [id])
+  to   User @relation("ConnectionTo",   fields: [toUserId],   references: [id])
+
+  @@unique([fromUserId, toUserId])
+}
+
+model Message {
+  id         String   @id @default(uuid())
+  fromUserId String
+  toUserId   String
+  content    String
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  from User @relation("MessageFrom", fields: [fromUserId], references: [id])
+  to   User @relation("MessageTo",   fields: [toUserId],   references: [id])
+}
