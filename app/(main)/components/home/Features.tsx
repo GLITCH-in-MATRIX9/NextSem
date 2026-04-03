@@ -9,11 +9,11 @@ const featureData = [
     desc: "I need to calculate or plan something right now.",
     backDesc: "Master your semester with our specialized toolkits.",
     buttons: [
-      { label: "Semester Planner", link: "/tools/sem-planner" },
-      { label: "Design Mania", link: "/tools/design" },
-      { label: "CGPA Calculator", link: "/tools/gpa-calculator" },
-      { label: "Attendance Calculator", link: "/tools/attendance-calculator" },
-      { label: "Resource Vault", link: "/tools/resources" },
+      { label: "Semester Planner", link: "/sem-planner" },
+      { label: "Design Mania", link: "/design" },
+      { label: "CGPA Calculator", link: "/gpa-calculator" },
+      { label: "Attendance Calculator", link: "/attendance-calculator" },
+      { label: "Resource Vault", link: "/resource-vault" },
     ],
     img: "/tools-illustration.svg",
     arrow: "/arrow-white.svg",
@@ -61,7 +61,7 @@ export default function Features() {
       ([entry]) => {
         if (entry.isIntersecting) setHasAppeared(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -101,27 +101,21 @@ export default function Features() {
               }`}
               style={{
                 transitionDelay: `${index * 150}ms`,
-                transitionTimingFunction:
-                  "cubic-bezier(0.34, 1.56, 0.64, 1)",
+                transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)",
               }}
             >
               {/* FIXED 3D WRAPPER */}
               <div className="[perspective:1200px] w-full h-full">
                 <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-
                   {/* FRONT */}
                   <div
                     className={`absolute inset-0 rounded-[30px] p-6 border-[2px] border-black flex flex-col h-full z-10 ${
-                      item.dark
-                        ? "bg-black text-white"
-                        : "bg-white text-black"
+                      item.dark ? "bg-black text-white" : "bg-white text-black"
                     }`}
                     style={{ backfaceVisibility: "hidden" }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-2xl font-bold">
-                        {item.title}
-                      </h3>
+                      <h3 className="text-2xl font-bold">{item.title}</h3>
                       <div className="relative w-10 h-10 flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">
                         <Image
                           src={item.circle}
@@ -208,7 +202,6 @@ export default function Features() {
                       Explore NextSem
                     </span>
                   </div>
-
                 </div>
               </div>
             </div>
